@@ -1,0 +1,3 @@
+Cart.first.products
+User.last.cart.products
+Cart.first.products.sum(:price)
