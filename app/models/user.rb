@@ -5,13 +5,13 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {minimum: 2}
   validates :age, inclusion: {in: 12..100}
   validates :balance, numericality: {greater_than_or_equal_to => 0}
-  validates :email, format: {with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }, allow_nil: true, allow_blank: true
+  validates :email, format: {with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }, allow_blank: true
 
  
   after_create :create_account_for_user
-  after_create :update_user_balance, if: age >=18?
+  after_create :update_user_balance, if: adult?
 
-  protected
+  private
 
   def create_account_for_user
     create_account(balance: 0)
@@ -20,5 +20,10 @@ class User < ApplicationRecord
   def update_user_balance
     account.update(balance: 100)
   end
+
+  def adult
+    age >=18
+  end
+
 
 end
