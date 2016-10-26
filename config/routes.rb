@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'carts/show'
+
   get 'carts_controller/show'
 
   root 'products#index'
