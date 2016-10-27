@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'carts/show'
-
   root 'products#index'
 
   resources :products, only: [:index, :new, :create, :show, :destroy]
