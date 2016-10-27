@@ -2,22 +2,23 @@
 
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Price</th>
-    <th>Description</th>
-    <th colspan="3"></th>
-  </tr>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
   </thead>
 
   <tbody>
-<% @cart.each do |product|%>
-    <p><%= product.name %></p>
-    <p><%= product.price %></p>
-    <p><%= product.description %></p>
-<% end %>
+    <% @cart.each do |product|%>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.description %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
-
 
  <%= link_to 'Back', products_path %>
