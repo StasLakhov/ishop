@@ -18,7 +18,7 @@
             %td= product.name
             %td= product.price
             %td= product.description
-            %td= link_to 'Destroy', @product, method: :delete, class: 'btn btn-danger'
+            %td= link_to 'Destroy', cart_path, method: :delete, class: 'btn btn-danger'
 
   %br
     %td= link_to '<- Back', products_path, class: 'btn btn-default'
