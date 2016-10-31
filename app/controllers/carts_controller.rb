@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   def show
-    @cart = Cart.find(session[:cart_id]).products
+    @cart = Cart.find(session[:cart_id])
+    @products = @cart.products
   end
 
   def add
@@ -10,7 +11,6 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:product_id])
     @product.destroy
     flash[:notice] = 'Product was deleted successfully'
   end
