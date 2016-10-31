@@ -1,24 +1,24 @@
 %p{id:"notice"}= notice
 
-.panel.panel-default
-  .panel-heading Product Description
-  %table.table
-    %thead
-      %tr
-        %th #
-        %th Name
-        %th Price
-        %th Description
+.container-fluid
+  .panel.panel-default
+    .panel-heading Product Description
+    %table.table
+      %thead
+        %tr
+          %th #
+          %th Name
+          %th Price
+          %th Description
 
-    %tbody
+      %tbody
+        %tr
+          %td
+          %td= @product.name
+          %td= @product.description
+          %td= @product.price
+          %td= link_to 'Destroy', @product, method: :delete, class: 'btn btn-danger'
 
-      %tr
-        %td
-        %td= @product.name
-        %td= @product.description
-        %td= @product.price
-        %td= link_to 'Destroy', @product, method: :delete, class: 'btn btn-danger'
+  %td= link_to '<-Back', products_path, class: 'btn btn-default'
 
-%br
-%td= link_to 'Back', products_path, class: 'btn btn-default'
 

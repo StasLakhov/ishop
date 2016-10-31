@@ -11,4 +11,10 @@ class CartsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:notice] = 'Product was deleted successfully'
+  end
+
 end

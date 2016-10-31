@@ -1,18 +1,24 @@
 %h1 New Product
 
-= link_to 'Back', products_path
+.container-fluid
+    .row
+        .col-sm-6
+            = form_tag '/products' do
+                = label_tag :name
+                %input.form-control{:placeholder => 'Name', :type => 'Name'}
 
-= form_tag '/products' do
-    = label_tag :name
-    %input.form-control{:placeholder => 'Name', :type => 'Name'}
+                = label_tag :price
+                %input.form-control{:placeholder => 'Price', :type => 'Prise'}
 
-    = label_tag :price
-    %input.form-control{:placeholder => 'Price', :type => 'Prise'}
+                = label_tag :description
+                %input.form-control{:placeholder => 'Description', :type => 'text'}
 
-    = label_tag :description
-    %input.form-control{:placeholder => 'Description', :type => "text"}
+                %br
 
-    = submit_tag 'Save!!!', class: 'btn btn-success'
+                %p= submit_tag 'Save!!!', class: 'btn btn-success'
+
+                %p= link_to '<- Back', products_path, class: 'btn btn-default'
+
 
 
 
