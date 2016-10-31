@@ -9,7 +9,11 @@
   </head>
 
   <body>
+    <div class = 'container'>
       <%= link_to image_tag('cart.png', size: '70x70'), cart_path  %>
+      <%= link_to 'EN', '?locale=en' %>
+      <%= link_to 'UA', '?locale=ua' %>
       <%= yield %>
+    </div>
   </body>
 </html>

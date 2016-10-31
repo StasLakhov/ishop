@@ -2,7 +2,8 @@
 
 .container-fluid
     .panel.panel-default
-        .panel-heading Products
+        .panel-heading
+            = t('.products')
         %table.table
             %thead
                 %tr
@@ -18,7 +19,7 @@
                     %td= product.name
                     %td= product.price
                     %td= product.description
-                    %td= link_to 'Show', product, class: 'btn btn-info'
+                    %td= link_to t('.Show'), product, class: 'btn btn-info'
                     %td= link_to 'Buy', add_cart_path(product_id: product.id), remote: true, class: 'btn btn-success'
                     %td= link_to 'Destroy', product, method: :delete, class: 'btn btn-danger'
 

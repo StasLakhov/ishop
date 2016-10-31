@@ -20,4 +20,25 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  products:
+    index:
+      products: Products en
+  carts:
+    add:
+      products_added: 'Product was added to cart'
+      list:
+        header:
+          zero: No products in cart
+          one: Product in cart
+          other: Products in cart
+
+  activerecord:
+    attributes:
+      product:
+        price: Price
+
+
+ua:
+  products:
+    index:
+      products: Products ua

@@ -4,14 +4,17 @@
     .row
         .col-sm-6
             = form_tag '/products' do
+
                 = label_tag :name
-                %input.form-control{:placeholder => 'Name', :type => 'text'}
+                %input.form-control{:placeholder => 'Name', :type => 'text', :name => 'name'}
 
+                %br
                 = label_tag :price
-                %input.form-control{:placeholder => 'Price', :type => 'integer'}
+                %input.form-control{placeholder: 'Price', type: 'integer', name: 'price'}
 
+                %br
                 = label_tag :description
-                %input.form-control{:placeholder => 'Description', :type => 'text'}
+                %input.form-control{:placeholder => 'Description', :type => 'text', :name => 'description'}
 
                 %br
 
