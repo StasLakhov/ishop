@@ -1,0 +1,22 @@
+%html
+  %head
+    %meta{:content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}/
+    %title Ishop
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .container
+      = link_to image_tag('cart.png', size: '70x70'), cart_path
+      = link_to 'EN', '?locale=en'
+      = link_to 'UA', '?locale=ua'
+
+      - if flash[:success]
+        .alert.alert-info
+          = flash[:success]
+      - if flash[:warning]
+        .alert.alert-danger
+          = flash[:warning]
+
+
+      = yield
