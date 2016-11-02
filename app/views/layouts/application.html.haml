@@ -10,13 +10,7 @@
       = link_to image_tag('cart.png', size: '70x70'), cart_path
       = link_to 'EN', '?locale=en'
       = link_to 'UA', '?locale=ua'
-
-      - if flash[:success]
-        .alert.alert-info
-          = flash[:success]
-      - if flash[:warning]
-        .alert.alert-danger
-          = flash[:warning]
+      = render 'layouts/flash'
 
 
       = yield
