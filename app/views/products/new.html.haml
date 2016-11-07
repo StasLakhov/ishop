@@ -1,27 +1,3 @@
-%h1 New Product
+%p{id:"notice"}= notice
 
-.container-fluid
-    .row
-        .col-sm-6
-            = form_tag '/products' do
-
-                = label_tag :name
-                %input.form-control{:placeholder => 'Name', :type => 'text', :name => 'name'}
-
-                %br
-                = label_tag :price
-                %input.form-control{placeholder: 'Price', type: 'integer', name: 'price'}
-
-                %br
-                = label_tag :description
-                %input.form-control{:placeholder => 'Description', :type => 'text', :name => 'description'}
-
-                %br
-
-                %p= submit_tag 'Save!!!', class: 'btn btn-success'
-
-                %p= link_to '<- Back', products_path, class: 'btn btn-default'
-
-
-
-
+= render 'form', product: @product

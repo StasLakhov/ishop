@@ -1,25 +1,23 @@
-= form_for(product) do |f|
-  - if product.errors.any?
-    #error_explanation
-      %h2= pluralize(product.errors.count, "error")
-      prohibited this product from being saved:
+.container-fluid
+  .row
+    .col-md-4
+      = form_tag '/products' do
 
-      %ul
-      - product.errors.full_messages.each do |message|
-        %li= message
+        %h1= t('.new_product')
 
-  .field
-    = f.label :name
-    = f.text_field :name
+        = label_tag t('.name')
+        %input.form-control{:placeholder => t('.name'), :type => 'text', :name => 'name'}
 
-  .field
-    = f.label :price
-    = f.number_field :price
-  </div>
+        %br
+        = label_tag t('.price')
+        %input.form-control{placeholder: t('.price'), type: 'integer', name: 'price'}
 
-  .field
-    = f.label :description
-    = f.text_field :description
+        %br
+        = label_tag t('.description')
+        %input.form-control{:placeholder => t('.description'), :type => 'text', :name => 'description'}
 
-  .actions
-    = f.submit
+        %br
+
+        %p= submit_tag t('.save'), class: 'btn btn-success'
+
+        %p= link_to t('.back'), products_path, class: 'btn btn-default'

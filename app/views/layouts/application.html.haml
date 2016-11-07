@@ -5,12 +5,17 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
   %body
-    .container
-      = link_to image_tag('cart.png', size: '70x70'), cart_path
-      = link_to 'EN', '?locale=en'
-      = link_to 'UA', '?locale=ua'
-      = render 'layouts/flash'
+    .header
+      %dt.col-md-8.h1 Ishop
+      %a.btn.btn-default{:href => "/products"} Products
+      %a.btn.btn-default{:href => "/users"} Users
+      = render 'layouts/lang'
+      = link_to image_tag('cart.png', size: '85x85'), cart_path
+
+    = render 'layouts/flash'
 
 
-      = yield
+
+  = yield

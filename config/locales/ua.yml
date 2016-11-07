@@ -1,0 +1,47 @@
+ua:
+  products:
+    index:
+      products: Продукт
+      name: Імя
+      price: Ціна
+      description: Опис
+      show: Деталі
+      buy: Купити
+      destroy: Видалити
+      new_product: Новий Продукт
+
+    form:
+      new_product: Новий продукт
+      name: Імя
+      price: Ціна
+      description: Опис
+      save: Зберегти
+      back: Назад
+
+    show:
+      product_description: Опис Продукту
+      name: Імя
+      price: Ціна
+      description: Опис
+      destroy: Видалити
+      back: Назад
+
+  carts:
+    add:
+      add_product: 'Продукт доданий у корзину'
+
+    list:
+      cart: Корзина
+      name: Імя
+      price: Ціна
+      description: Опис
+      destroy: Видалити
+      back: Назад
+
+  users:
+    form:
+      new_user: Новий Користувач
+      name: Імя
+      age: Вік
+      save: Зберегти
+      back: Назад

@@ -1,44 +1,48 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   products:
     index:
-      products: Products en
+      products: Products
+      name: Name
+      price: Price
+      description: Description
+      show: Show
+      buy: Buy
+      destroy: Destroy
+      new_product: New Product
+
+    form:
+      new_product: New Product
+      name: Name
+      price: Price
+      description: Description
+      save: Save
+      back: Back
+
+    new:
+      product_description: Product Description
+      name: Name
+      price: Price
+      description: Description
+      destroy: Destroy
+      back: Back
+
+
   carts:
     add:
-      products_added: 'Product was added to cart'
-      list:
-        header:
-          zero: No products in cart
-          one: Product in cart
-          other: Products in cart
+      add_product: 'Product was added to cart'
 
-  activerecord:
-    attributes:
-      product:
-        price: Price
+    list:
+      cart: Cart
+      name: Name
+      price: Price
+      description: Description
+      destroy: Destroy
+      back: Back
 
-
-ua:
-  products:
-    index:
-      products: Products ua
+  users:
+    form:
+      new_user: New User
+      name: Name
+      age: Age
+      save: Save
+      back: Back

@@ -1,0 +1,24 @@
+%p{id:"notice"}= notice
+
+.container
+  .panel.panel-default
+    .panel-heading
+      = t('.users')
+    %table.table
+      %thead
+        %tr
+          %th= t('.name')
+          %th= t('.age')
+
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td= user.name
+            %td= user.age
+            %td= link_to 'Show', user, class: 'btn btn-info'
+            %td= link_to 'Edit', edit_user_path(user), class: 'btn btn-success'
+            %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+
+  %br
+  %td= link_to t('.New User'), new_user_path, class: 'btn btn-default'
+

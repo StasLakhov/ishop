@@ -1,25 +1,23 @@
 %p{id:"notice"}= notice
 
-.container-fluid
+.container
   .panel.panel-default
-    .panel-heading Cart
+    .panel-heading= t('.cart')
     %table.table
       %thead
         %tr
-          %th #
-          %th Name
-          %th Price
-          %th Description
+          %th= t('.name')
+          %th= t('.price')
+          %th= t('.description')
 
       %tbody
         - @products.each do |product|
           %tr
-            %td
             %td= product.name
             %td= product.price
             %td= product.description
-            %td= link_to 'Destroy', product, method: :delete, class: 'btn btn-danger'
+            %td= link_to t('.destroy'), product, method: :delete, class: 'btn btn-danger'
 
 
   %br
-    %td= link_to '<- Back', products_path, class: 'btn btn-default'
+    %td= link_to t('.back'), products_path, class: 'btn btn-default'

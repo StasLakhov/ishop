@@ -1,21 +1,40 @@
-= form_for(user) do |f|
-  - if user.errors.any?
-    #error_explanation
-      %h2= pluralize(user.errors.count, "error")
-      prohibited this user from being saved:
+.container-fluid
+  .row
+    .col-md-4
+      = form_tag '/users' do
 
-      %ul
-      - user.errors.full_messages.each do |message|
-        %li= message
+        %h1= t('.new_user')
 
-  .field
-    = f.label :name
-    = f.text_field :name
+        = label_tag t('.name')
+        %input.form-control{:placeholder => t('.name'), :type => 'text', :name => 'name'}
 
-  .field
-    = f.label :age
-    = f.number_field :age
+        %br
+        = label_tag t('.age')
+        %input.form-control{placeholder: t('.age'), type: 'integer', name: 'age'}
 
-  .actions
-    = f.submit
+        %br
 
+        %p= submit_tag t('.save'), class: 'btn btn-success'
+
+        %p= link_to t('.back'), users_path, class: 'btn btn-default'
+
+  = form_for(user) do |f|
+    - if user.errors.any?
+      #error_explanation
+        %h2= pluralize(user.errors.count, "error")
+        prohibited this user from being saved:
+
+        %ul
+        - user.errors.full_messages.each do |message|
+          %li= message
+
+    .field
+      = f.label :name
+      = f.text_field :name
+
+    .field
+      = f.label :age
+      = f.number_field :age
+
+    .actions
+      = f.submit
