@@ -14,6 +14,6 @@
         %tr
           %td= @user.name
           %td= @user.age
-          %td= link_to t('.Edit'), edit_user_path(@user), class: 'btn btn-success'
+          %td= link_to t('.edit'), edit_user_path(@user), class: 'btn btn-success'
   %br
   %td= link_to t('.back'), users_path, class: 'btn btn-default'

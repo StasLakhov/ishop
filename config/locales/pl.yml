@@ -1,0 +1,70 @@
+pl:
+  layouts:
+    application:
+      products: Produkty
+      users: Użytkownicy
+
+  products:
+    index:
+      products: Produkty
+      name: Nazwa
+      price: Cena
+      description: Opis
+      show: Pokaż
+      buy: Kup
+      destroy: Zniszczyć
+      new_product: Nowy produkt
+      confirm_message: Czy na pewno?
+
+    form:
+      new_product: Nowy produkt
+      name: Nazwa
+      price: Cena
+      description: Opis
+      save: Zapisz
+      back: Powrót
+
+    show:
+      product_description: Opis Produktu
+      name: Nazwa
+      price: Cena
+      description: Opis
+      destroy: Zniszczyć
+      back: Powrót
+
+
+  carts:
+    add: 'Produkt został dodany do koszyka'
+
+    list:
+      cart: Koszyk
+      name: Nazwa
+      price: Cena
+      description: Opis
+      destroy: Zniszczyć
+      back: Powrót
+
+  users:
+    index:
+      users: Użytkownicy
+      name: Nazwa
+      age: Wiek
+      show: Pokaż
+      edit: Edytować
+      destroy: Zniszczyć
+      new_user: Nowy Użytkownik
+      confirm_message: Czy na pewno?
+
+    form:
+      new_user: Nowy Użytkownik
+      name: Nazwa
+      age: Wiek
+      save: Zapisz
+      back: Powrót
+
+    show:
+      users: Użytkownicy
+      name: Nazwa
+      age: Wiek
+      edit: Edytować
+      back: Powrót

@@ -24,7 +24,7 @@ en:
       save: Save
       back: Back
 
-    new:
+    show:
       product_description: Product Description
       name: Name
       price: Price
