@@ -4,9 +4,9 @@
   background-color: #8B0000;
   color: #fff;
 }
+
 .header dt {
   margin: center;
-
 }
 
 body {
@@ -16,6 +16,12 @@ body {
   font-size: 13px;
   line-height: 18px;
   margin: 33px;
+}
+
+.panel-heading {
+  color: #f4a6bd;
+  background-color: #f4a6bd;
+  border-color: #ddd;
 }
 
 p, ol, ul, td {

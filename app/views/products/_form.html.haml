@@ -3,7 +3,7 @@
     .col-md-4
       = form_tag '/products' do
 
-        %h1= t('.new_product')
+        %h3= t('.new_product')
 
         = label_tag t('.name')
         %input.form-control{:placeholder => t('.name'), :type => 'text', :name => 'name'}

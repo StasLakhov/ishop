@@ -3,7 +3,7 @@
 .container
     .panel.panel-default
         .panel-heading
-            = t('.products')
+            %h3= t('.products')
         %table.table
             %thead
                 %tr
@@ -19,8 +19,7 @@
                     %td= product.description
                     %td= link_to t('.show'), product, class: 'btn btn-info'
                     %td= link_to t('.buy'), add_cart_path(product_id: product.id), remote: true, class: 'btn btn-success'
-                    %td= link_to t('.destroy'), product, method: :delete, class: 'btn btn-danger'
+                    %td= link_to t('.destroy'), product, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' }
 
     %br
     %td= link_to t('.new_product'), new_product_path, class: 'btn btn-default'
-

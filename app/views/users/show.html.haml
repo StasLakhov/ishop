@@ -3,7 +3,7 @@
 .container
   .panel.panel-default
     .panel-heading
-      = t('.users')
+      %h3= t('.users')
     %table.table
       %thead
         %tr
@@ -14,6 +14,6 @@
         %tr
           %td= @user.name
           %td= @user.age
-          %td= link_to 'Edit', edit_user_path(@user), class: 'btn btn-success'
+          %td= link_to t('.Edit'), edit_user_path(@user), class: 'btn btn-success'
   %br
   %td= link_to t('.back'), users_path, class: 'btn btn-default'

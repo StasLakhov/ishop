@@ -1,4 +1,9 @@
 en:
+  layouts:
+    application:
+      products: Products
+      users: Users
+
   products:
     index:
       products: Products
@@ -40,9 +45,26 @@ en:
       back: Back
 
   users:
+    index:
+      users: Users
+      name: Name
+      age: Age
+      show: Show
+      edit: Edit
+      destroy: Destroy
+      new_user: New User
+      confirm_message: Are you sure?
+
     form:
       new_user: New User
       name: Name
       age: Age
       save: Save
+      back: Back
+
+    show:
+      users: Users
+      name: Name
+      age: Age
+      edit: Edit
       back: Back

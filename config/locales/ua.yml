@@ -1,7 +1,12 @@
 ua:
+  layouts:
+    application:
+      products: Продукти
+      users: Користувачі
+
   products:
     index:
-      products: Продукт
+      products: Продукти
       name: Імя
       price: Ціна
       description: Опис
@@ -39,9 +44,26 @@ ua:
       back: Назад
 
   users:
+    index:
+      users: Користувачі
+      name: Імя
+      age: Вік
+      show: Деталі
+      edit: Редагувати
+      destroy: Видалити
+      new_user: Новий Користувач
+      confirm_message: Ви впевнені ?
+
     form:
       new_user: Новий Користувач
       name: Імя
       age: Вік
       save: Зберегти
+      back: Назад
+
+    show:
+      users: Користувачі
+      name: Імя
+      age: Вік
+      edit: Редагувати
       back: Назад
