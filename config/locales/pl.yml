@@ -68,3 +68,8 @@ pl:
       age: Wiek
       edit: Edytować
       back: Powrót
+
+  Removed_from_cart_successfully: Usunięto z koszyka powodzeniem
+  Created_successfully: Utworzono pomyślnie
+  Deleted_successfully: Usunięty z powodzeniem
+  Updated_successfully: Aktualizacja zakończona sukcesem
