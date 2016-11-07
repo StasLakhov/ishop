@@ -67,3 +67,8 @@ ua:
       age: Вік
       edit: Редагувати
       back: Назад
+
+  Removed_from_cart_successfully: Товар видалено з корзини
+  Created_successfully: Успішно додано
+  Deleted_successfully: Успішно видалено
+  Updated_successfully: Успішно оновлено

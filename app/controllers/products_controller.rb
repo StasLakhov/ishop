@@ -15,13 +15,13 @@ class ProductsController < ApplicationController
   def create
     Product.create(product_params)
     redirect_to products_path
-    flash[:success] = 'Created successfully'
+    flash[:success] = t(:Created_successfully)
   end
 
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    flash[:warning] = 'Deleted successfully'
+    flash[:warning] = t(:Deleted_successfully)
     redirect_to products_path
   end
 

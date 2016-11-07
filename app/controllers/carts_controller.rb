@@ -15,7 +15,7 @@ class CartsController < ApplicationController
     @cart = Cart.find(session[:cart_id])
     @product = Product.find(params[:product_id])
     @cart.products.destroy(@product)
-    flash[:warning] = 'Removed from cart successfully'
+    flash[:warning] = t(:Removed_from_cart_successfully)
     redirect_to cart_path
 
   end
