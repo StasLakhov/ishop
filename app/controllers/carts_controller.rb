@@ -8,15 +8,16 @@ class CartsController < ApplicationController
     @cart = Cart.find(session[:cart_id])
     @product = Product.find(params[:product_id])
     @cart.products << @product
-    CartMailer.product_added(@product).deliver_now
+    # CartMailer.product_added(@product).deliver_now
   end
 
   def destroy
     @cart = Cart.find(session[:cart_id])
     @product = Product.find(params[:product_id])
     @cart.products.destroy(@product)
+    flash[:warning] = 'Removed from cart successfully'
     redirect_to cart_path
-    flash[:notice] = 'Product was deleted successfully'
+
   end
 
 
