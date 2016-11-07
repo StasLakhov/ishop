@@ -14,6 +14,7 @@ en:
       buy: Buy
       destroy: Destroy
       new_product: New Product
+      confirm_message: Are you sure?
 
     form:
       new_product: New Product
@@ -33,8 +34,7 @@ en:
 
 
   carts:
-    add:
-      add_product: 'Product was added to cart'
+    add: 'Product was added to cart'
 
     list:
       cart: Cart

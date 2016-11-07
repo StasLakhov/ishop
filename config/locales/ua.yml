@@ -14,6 +14,7 @@ ua:
       buy: Купити
       destroy: Видалити
       new_product: Новий Продукт
+      confirm_message: Ви впевнені ?
 
     form:
       new_product: Новий продукт
@@ -32,8 +33,7 @@ ua:
       back: Назад
 
   carts:
-    add:
-      add_product: 'Продукт доданий у корзину'
+    add: 'Продукт доданий у корзину'
 
     list:
       cart: Корзина
