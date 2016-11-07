@@ -1,40 +1,28 @@
 .container-fluid
   .row
     .col-md-4
-      = form_tag '/users' do
+      %h1= t('.new_user')
+      = form_for(user) do |f|
+        - if user.errors.any?
+          #error_explanation
+            %h2= pluralize(user.errors.count, "error")
+            prohibited this user from being saved:
 
-        %h1= t('.new_user')
+            %ul
+            - user.errors.full_messages.each do |message|
+              %li= message
 
-        = label_tag t('.name')
-        %input.form-control{:placeholder => t('.name'), :type => 'text', :name => 'name'}
+        .field
+          = label_tag t('.name')
+          %input.form-control{:placeholder => t('.name'), :type => 'text', :name => 'name'}
 
-        %br
-        = label_tag t('.age')
-        %input.form-control{placeholder: t('.age'), type: 'integer', name: 'age'}
+        .field
+          = label_tag t('.age')
+          %input.form-control{placeholder: t('.age'), type: 'integer', name: 'age'}
 
-        %br
+        .actions
+          %br
 
-        %p= submit_tag t('.save'), class: 'btn btn-success'
+          %p= submit_tag t('.save'), class: 'btn btn-success'
 
-        %p= link_to t('.back'), users_path, class: 'btn btn-default'
-
-  = form_for(user) do |f|
-    - if user.errors.any?
-      #error_explanation
-        %h2= pluralize(user.errors.count, "error")
-        prohibited this user from being saved:
-
-        %ul
-        - user.errors.full_messages.each do |message|
-          %li= message
-
-    .field
-      = f.label :name
-      = f.text_field :name
-
-    .field
-      = f.label :age
-      = f.number_field :age
-
-    .actions
-      = f.submit
+          %p= link_to t('.back'), users_path, class: 'btn btn-default'

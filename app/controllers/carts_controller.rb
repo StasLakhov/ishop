@@ -13,8 +13,9 @@ class CartsController < ApplicationController
 
   def destroy
     @cart = Cart.find(session[:cart_id])
-    @product = Cart.find(params[:product_id])
+    @product = Product.find(params[:product_id])
     @cart.products.destroy(@product)
+    redirect_to cart_path
     flash[:notice] = 'Product was deleted successfully'
   end
 
