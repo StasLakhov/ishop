@@ -6,14 +6,16 @@
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
           %span{"aria-hidden" => "true"} ×
         %h4#exampleModalLabel.modal-title Order Form
+
       .modal-body
         %form
           .form-group
-            %label.control-label{:for => "recipient-name"} Email:
+            = label_tag 'Email'
             %input#recipient-name.form-control{:type => "text"}/
+
           .form-group
-            %label.control-label{:for => "message-text"} Add your comment:
+            = label_tag 'Add your comment:'
             %textarea#message-text.form-control
+
       .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-        %button.btn.btn-primary{:type => "button"} Send message
+        %p= submit_tag 'Order', class: 'btn btn-primary'
