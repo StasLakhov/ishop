@@ -20,8 +20,8 @@ class CartsController < ApplicationController
   end
 
   def order
-    @mail = params[:mail]
-    @message = params[:message]
+    @email = params[:email]
+    @comment = params[:comment]
   end
 
 end

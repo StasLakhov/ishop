@@ -1,4 +1,3 @@
-
 #exampleModal.modal.fade{"aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
   .modal-dialog{:role => "document"}
     .modal-content
@@ -7,15 +6,14 @@
           %span{"aria-hidden" => "true"} ×
         %h4#exampleModalLabel.modal-title Order Form
 
-      .modal-body
-        %form
+      %form{:action => "carts/order", :method => "post"}
+        .modal-body
           .form-group
             = label_tag 'Email'
-            %input#recipient-name.form-control{:type => "text"}/
+            %input.form-control{placeholder: 'email', type: 'text', name: 'email'}
 
           .form-group
             = label_tag 'Add your comment:'
-            %textarea#message-text.form-control
+            %input.form-control{placeholder: 'comment', type: 'text', name: 'comment'}
 
-      .modal-footer
-        %p= submit_tag 'Order', class: 'btn btn-primary'
+          %p= submit_tag 'Order', class: 'btn btn-primary'
