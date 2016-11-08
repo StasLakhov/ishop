@@ -17,8 +17,10 @@ class CartsController < ApplicationController
     @cart.products.destroy(@product)
     flash[:warning] = t(:Removed_from_cart_successfully)
     redirect_to cart_path
-
   end
 
+  def order
+
+  end
 
 end
