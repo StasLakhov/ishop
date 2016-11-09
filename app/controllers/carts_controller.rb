@@ -20,7 +20,7 @@ class CartsController < ApplicationController
   end
 
   def order
-    CartMailer.product_ordered(@product).deliver_now
+    CartMailer.product_ordered(@user_mail).deliver_now
   end
 
 end

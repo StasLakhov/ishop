@@ -6,7 +6,7 @@ class CartMailer < ApplicationMailer
     subject: 'product was added' )
   end
 
-  def order(user_mail)
+  def product_ordered(user_mail)
     @user_mail = user_mail
     mail(to: @user.email, subject: 'sample Email')
   end

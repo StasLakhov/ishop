@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :new, :create, :show, :destroy]
   resources :users
-  resource :cart, only: [:show, :destroy, ] do
-    get 'add', on: :member
+  resource :cart, only: [:show, :destroy] do
+    get :add, :order, on: :member
+
   end
 
 
