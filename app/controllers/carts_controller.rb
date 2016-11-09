@@ -22,6 +22,7 @@ class CartsController < ApplicationController
   def order
     @email = params[:email]
     @comment = params[:comment]
+    CartMailer.product_ordered(@product).deliver_now
   end
 
 end
