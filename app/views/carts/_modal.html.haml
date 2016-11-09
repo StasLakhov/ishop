@@ -10,10 +10,12 @@
         .modal-body
           .form-group
             = label_tag 'Email'
-            %input.form-control{placeholder: 'email', type: 'text', name: 'email'}
+            %input.form-control{placeholder: 'email', type: 'email', name: 'email'}
 
           .form-group
             = label_tag 'Add your comment:'
             %input.form-control{placeholder: 'comment', type: 'text', name: 'comment'}
 
           %p= submit_tag 'Order', class: 'btn btn-primary'
+
+
