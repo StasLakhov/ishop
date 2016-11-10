@@ -21,8 +21,8 @@ class CartsController < ApplicationController
     redirect_to cart_path
   end
 
-  def order(user_mail, comment)
-    @user_mail = user_mail
+  def order
+    @user_mail = params[:user_email]
     CartMailer.product_ordered(@user_mail).deliver_now
   end
 
