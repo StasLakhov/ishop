@@ -19,7 +19,7 @@ class CartsController < ApplicationController
     redirect_to cart_path
   end
 
-  def order
+  def order(user_mail, comment)
     CartMailer.product_ordered(@user_mail).deliver_now
   end
 

@@ -2,22 +2,18 @@
   .modal-dialog{:role => "document"}
     .modal-content
       .modal-header
-        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-          %span{"aria-hidden" => "true"} ×
-        %h4#exampleModalLabel.modal-title Order Form
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+        %h4.modal-title Order Form
 
-      %form
-        .modal-body
+      .modal-body
+        %form{:action => "cart/order", :method => "post"}
+
           .form-group
             = label_tag 'Email'
-            %input.form-control{placeholder: 'email', type: 'email', name: 'email'}
+            %input.form-control{placeholder: 'email', type: 'email', name: 'user_email'}
 
           .form-group
             = label_tag 'Add your comment:'
             %input.form-control{placeholder: 'comment', type: 'text', name: 'comment'}
 
-
           %p= submit_tag 'Order', class: 'btn btn-primary', method: :post
-
-
-
