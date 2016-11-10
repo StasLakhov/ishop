@@ -2,11 +2,13 @@
   .modal-dialog{:role => "document"}
     .modal-content
       .modal-header
+
         %button.close{"data-dismiss" => "modal", :type => "button"} ×
         %h4.modal-title Order Form
 
       .modal-body
-        %form{:action => "cart/order", :method => "post"}
+
+        %form
 
           .form-group
             = label_tag 'Email'
@@ -16,4 +18,4 @@
             = label_tag 'Add your comment:'
             %input.form-control{placeholder: 'comment', type: 'text', name: 'comment'}
 
-          %p= submit_tag 'Order', class: 'btn btn-primary', method: :post
+          = link_to 'Order', order_cart_path, method: :post, class: 'btn btn-primary'

@@ -1,4 +1,6 @@
 class CartsController < ApplicationController
+  attr_accessor :user_mail, :comment
+
   def show
     @cart = Cart.find(session[:cart_id])
     @products = @cart.products
@@ -20,6 +22,7 @@ class CartsController < ApplicationController
   end
 
   def order(user_mail, comment)
+    @user_mail = user_mail
     CartMailer.product_ordered(@user_mail).deliver_now
   end
 
