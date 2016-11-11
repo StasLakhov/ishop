@@ -9,10 +9,11 @@
   %body
     .header
       %dt.col-md-8.h1 Ishop
-      %a.btn.btn-default{:href => "/products"}= t('.products')
-      %a.btn.btn-default{:href => "/users"}= t('.users')
       = render 'layouts/lang'
+      = link_to image_tag('products.png', size: '85x85'), products_path
+      = link_to image_tag('users_2.png', size: '85x85'), users_path
       = link_to image_tag('cart.png', size: '85x85'), cart_path
+
 
     = render 'layouts/flash'
 
