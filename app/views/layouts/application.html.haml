@@ -8,12 +8,11 @@
 
   %body
     .header
-      %dt.col-md-8.h1 Ishop
-      = render 'layouts/lang'
-      = link_to image_tag('products.png', size: '85x85'), products_path
-      = link_to image_tag('users_2.png', size: '85x85'), users_path
-      = link_to image_tag('cart.png', size: '85x85'), cart_path
-
+      %dt.col-md-1= link_to image_tag('ishop.png', size: '85x85'), products_path
+      %dt.col-md-1= link_to image_tag('products_2.png', size: '85x85'), products_path
+      %dt.col-md-1= link_to image_tag('users-3.png', size: '85x85'), users_path
+      %dt.col-md-7= link_to image_tag('cart_2.png', size: '85x85'), cart_path
+      %dt.col-md-2= render 'layouts/lang'
 
     = render 'layouts/flash'
 
