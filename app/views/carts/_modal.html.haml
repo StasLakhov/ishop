@@ -8,15 +8,15 @@
 
       .modal-body
 
-        %form
+        = form_tag order_cart_path do
 
           .form-group
             = label_tag 'Email'
-            %input.form-control{placeholder: 'email', type: 'email', name: 'user_email'}
+            = email_field 'user_email', nil, placeholder: 'Email address', type: :email, class: 'form-control'
 
           .form-group
             = label_tag 'Add your comment:'
-            %input.form-control{placeholder: 'comment', type: 'text', name: 'comment'}
+            = text_field 'comment', nil, class: 'form-control', placeholder: 'comment', type: 'text'
 
-          = link_to 'Order', order_cart_path, method: :post, class: 'btn btn-primary'
+          = submit_tag 'Order', class: 'btn btn-primary'
 
