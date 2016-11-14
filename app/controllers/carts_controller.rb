@@ -24,6 +24,8 @@ class CartsController < ApplicationController
   def order
     @user_mail = params[:user_email]
     CartMailer.product_ordered(@user_mail).deliver_now
+    flash[:success] = 'Product ordered successfully, wait for delievery'
+    redirect_to cart_path
   end
 
 end
