@@ -13,9 +13,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(product_params)
-    redirect_to products_path
-    flash[:success] = t(:Created_successfully)
+    @product = Product.create(product_params)
+      if @product.save
+        redirect_to products_path
+        flash[:success] = t(:Created_successfully)
+      else
+        render :new
+      end
   end
 
   def destroy

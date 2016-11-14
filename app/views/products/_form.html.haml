@@ -1,9 +1,16 @@
 .container-fluid
   .row
     .col-md-4
-      = form_tag '/products' do
+      %h3= t('.new_product')
+      = form_for(product) do |f|
+        - if product.errors.any?
+          #error_explanation
+            %h2= pluralize(product.errors.count, "error")
+            prohibited this product from being saved:
 
-        %h3= t('.new_product')
+            %ul
+            - product.errors.full_messages.each do |message|
+              %li= message
 
         = label_tag t('.name')
         %input.form-control{:placeholder => t('.name'), :type => 'text', :name => 'name'}
