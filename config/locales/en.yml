@@ -43,6 +43,13 @@ en:
       description: Description
       destroy: Destroy
       back: Back
+      order: Order
+
+    modal:
+      order: Order
+      order_form: Order Form
+      email: Email
+      comment: Comment
 
   users:
     index:

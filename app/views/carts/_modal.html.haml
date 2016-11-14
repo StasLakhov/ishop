@@ -4,19 +4,19 @@
       .modal-header
 
         %button.close{"data-dismiss" => "modal", :type => "button"} ×
-        %h4.modal-title Order Form
+        %h4.modal-title= t('.order_form')
 
       .modal-body
 
         = form_tag order_cart_path do
 
           .form-group
-            = label_tag 'Email'
-            = email_field 'user_email', nil, placeholder: 'Email address', type: :email, class: 'form-control'
+            = label_tag= t('.email')
+            = email_field 'user_email', nil, placeholder: t('.email'), type: :email, class: 'form-control'
 
           .form-group
-            = label_tag 'Add your comment:'
-            = text_field 'comment', nil, class: 'form-control', placeholder: 'comment', type: 'text'
+            = label_tag = t('.comment')
+            = text_field 'comment', nil, class: 'form-control', placeholder: t('.comment'), type: 'text'
 
-          = submit_tag 'Order', class: 'btn btn-primary'
+          = submit_tag t('.order'), class: 'btn btn-primary'
 

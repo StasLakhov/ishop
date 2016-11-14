@@ -42,6 +42,13 @@ ua:
       description: Опис
       destroy: Видалити
       back: Назад
+      order: Замовити
+
+    modal:
+      order: Замовити
+      order_form: Форма замовлення
+      email: Email
+      comment: Коментар
 
   users:
     index:

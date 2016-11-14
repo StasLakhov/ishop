@@ -43,6 +43,14 @@ pl:
       description: Opis
       destroy: Zniszczyć
       back: Powrót
+      order: Zamówienie
+      
+    modal:
+      order: Zamówienie
+      order_form: Formularz zamówienia
+      email: Email
+      comment: Komentarz
+      users: Użytkownicy
 
   users:
     index:
