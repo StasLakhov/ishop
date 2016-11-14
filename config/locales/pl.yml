@@ -35,6 +35,7 @@ pl:
 
   carts:
     add: 'Produkt został dodany do koszyka'
+    product_ordered_successfully_wait_for_delievery: Zamówiony produkt pomyślnie, czekać na dostawę
 
     list:
       cart: Koszyk

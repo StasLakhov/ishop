@@ -35,6 +35,7 @@ en:
 
   carts:
     add: 'Product was added to cart'
+    product_ordered_successfully_wait_for_delievery: Product ordered successfully, wait for delievery
 
     list:
       cart: Cart
