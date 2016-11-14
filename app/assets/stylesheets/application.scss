@@ -33,4 +33,16 @@
   bottom: 0;
   width: 100%;
   padding: 15px;
+
+  .dropup{
+    display: inline-block;
+
+    .dropdown-menu {
+      min-width: auto;
+
+      img {
+        margin-right: 5px;
+      }
+    }
+  }
 }

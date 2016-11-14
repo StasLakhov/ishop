@@ -4,10 +4,9 @@
     %span.caret
   %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
     %li
-      %a.btn.btn-default{:href => "?locale=en"} EN
+      = link_to image_tag('uk.png', size: '20x20') + 'En', locale: :en
     %li
-      %a.btn.btn-default{:href => "?locale=ua"} UA
+      = link_to image_tag('ua.png', size: '20x20') + 'UA', locale: :ua
     %li
-      %a.btn.btn-default{:href => "?locale=pl"} PL
-
+      = link_to image_tag('pl.png', size: '20x20') + 'PL', locale: :pl
 
