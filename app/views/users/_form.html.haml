@@ -14,11 +14,11 @@
 
         .field
           = label_tag t('.name')
-          %input.form-control{:placeholder => t('.name'), :type => 'text', :name => 'name'}
+          %input.form-control{:placeholder => t('.name'), :type => 'text', :name => 'name', :required => ""}
 
         .field
           = label_tag t('.age')
-          %input.form-control{placeholder: t('.age'), type: 'integer', name: 'age'}
+          %input.form-control{placeholder: t('.age'), type: 'integer', name: 'age', :required => ""}
 
         .actions
           %br
