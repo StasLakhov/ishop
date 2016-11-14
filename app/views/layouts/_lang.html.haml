@@ -1,5 +1,13 @@
-%a.btn.btn-default{:href => "?locale=en"} EN
-%a.btn.btn-default{:href => "?locale=ua"} UA
-%a.btn.btn-default{:href => "?locale=pl"} PL
+.dropup
+  %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+    Language
+    %span.caret
+  %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
+    %li
+      %a.btn.btn-default{:href => "?locale=en"} EN
+    %li
+      %a.btn.btn-default{:href => "?locale=ua"} UA
+    %li
+      %a.btn.btn-default{:href => "?locale=pl"} PL
 
 

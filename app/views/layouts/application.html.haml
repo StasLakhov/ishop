@@ -8,15 +8,23 @@
 
   %body
     .header
-      %dt.col-md-1= link_to image_tag('ishop.png', size: '85x85'), products_path
-      %dt.col-md-1= link_to image_tag('products_2.png', size: '85x85'), products_path
-      %dt.col-md-1= link_to image_tag('users-3.png', size: '85x85'), users_path
-      %dt.col-md-7= link_to image_tag('cart_2.png', size: '85x85'), cart_path
-      %dt.col-md-2= render 'layouts/lang'
+      .row
+        %div.col-md-1.text-center= link_to image_tag('ishop.png'), products_path
+        %div.col-md-1.text-center= link_to image_tag('products_2.png'), products_path
+        %div.col-md-1.text-center= link_to image_tag('users-3.png'), users_path
+        %div.col-md-2.pull-right.text-right= link_to image_tag('cart_2.png'), cart_path
+
 
     = render 'layouts/flash'
 
+    = yield
+
+    .footer
+      .row
+        %div.col-md-2.text-center= render 'layouts/lang'
 
 
-  = yield
+
+
+
 

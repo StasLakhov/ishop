@@ -44,7 +44,7 @@ pl:
       destroy: Zniszczyć
       back: Powrót
       order: Zamówienie
-      
+
     modal:
       order: Zamówienie
       order_form: Formularz zamówienia
