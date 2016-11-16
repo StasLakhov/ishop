@@ -62,6 +62,12 @@ describe UsersController do
       expect(response).to redirect_to @user
     end
 
+    it 'user update fail' do
+      @user = User.create(name: 'www', age: 22)
+      put :update, params: {id: @user.id}
+      expect(response).to redirect_to @user
     end
+
+   end
 
 end
