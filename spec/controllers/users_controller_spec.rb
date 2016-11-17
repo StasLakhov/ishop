@@ -23,12 +23,20 @@ describe UsersController do
     it 'when user creating pass' do
       post :create, params: {name: 'www', age: 22}
       expect(response).to redirect_to user_path(User.last)
+      expect(User.last.name).to eq 'www'
+      expect(User.last.age).to eq 22
     end
 
-    it 'when user creating fail' do
+    it 'when user creating fail - age: nil' do
       post :create, params: {name: 'www', age: nil}
       expect(response).to render_template('new')
     end
+
+    it 'when user creating fail - name: nil' do
+      post :create, params: {name: nil, age: 22}
+      expect(response).to render_template('new')
+    end
+
   end
 
   describe 'destroy action' do

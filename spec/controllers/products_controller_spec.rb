@@ -23,10 +23,23 @@ describe ProductsController do
     it 'when product creating pass' do
       post :create, params: {description: 'qqq', name: 'www', price: 22}
       expect(response).to redirect_to products_path
+      expect(Product.last.name).to eq 'www'
+      expect(Product.last.description).to eq 'qqq'
+      expect(Product.last.price).to eq 22
     end
 
-    it 'when product creating fail' do
+    it 'when product creating fail - price: nil' do
       post :create, params: {description: 'qqq', name: 'www', price: nil}
+      expect(response).to render_template('new')
+    end
+
+    it 'when product creating fail - name: nil' do
+      post :create, params: {description: 'qqq', name: nil, price: 22}
+      expect(response).to render_template('new')
+    end
+
+    it 'when product creating fail - description: nil' do
+      post :create, params: {description: nil, name: 'www', price: 22}
       expect(response).to render_template('new')
     end
   end

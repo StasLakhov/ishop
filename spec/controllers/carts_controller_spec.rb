@@ -2,6 +2,9 @@ require 'spec_helper'
 require 'rails_helper'
 
 describe CartsController do
+  let 'create product' do
+    post :create, name: 'www', description: 'qqq', price: 22
+  end
 
   describe 'show action' do
     it 'render show' do
@@ -13,7 +16,7 @@ describe CartsController do
 
   describe 'add action' do
     let(:create) do
-      post 'products#create', controller => 'prodcucts', name: 'Prod2', description: 'Prod2 descr', price: 12
+      post 'products#create', controller => 'products', name: 'Prod2', description: 'Prod2 descr', price: 12
       @product = Product.find(params[:product_id])
       @cart.products << @product
     end
@@ -21,19 +24,12 @@ describe CartsController do
 
   describe 'destroy action' do
     it 'destoy product from cart' do
-      post 'products#create', controller: 'prodcucts', params: {description: 'qqq', name: 'www', price: 22}
-      @product = Product.find(params[:product_id])
+      @product = Product.create(description: 'qqq', name: 'www', price: 22)
+      @cart = Cart.find(session[:cart_id])
       @cart.products << @product
       delete :destroy, params: {id: @product.id}
       expect(response).to redirect_to cart_path
     end
   end
-
-  describe 'order action' do
-    it 'order product' do
-
-    end
-  end
-
 
 end
