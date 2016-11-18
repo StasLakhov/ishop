@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_filter :authenticate_user!
+
   before_action :set_current_cart
   before_action :set_locale
 
