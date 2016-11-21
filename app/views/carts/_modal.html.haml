@@ -12,7 +12,7 @@
 
           .form-group
             = label_tag= t('.email')
-            = email_field 'user_email', nil, placeholder: t('.email'), type: :email, class: 'form-control', required: ''
+            = current_user.email
 
           .form-group
             = label_tag = t('.comment')
