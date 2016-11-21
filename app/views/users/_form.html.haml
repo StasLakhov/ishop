@@ -13,12 +13,20 @@
               %li= message
 
         .field
-          = label_tag t('.name')
-          %input.form-control{:placeholder => t('.name'), :type => 'text', :name => 'name', :required => ""}
+          = f.label t('.name')
+          = f.text_field :name, class: 'form-control', placeholder: t('.name')
 
         .field
-          = label_tag t('.age')
-          %input.form-control{placeholder: t('.age'), type: 'integer', name: 'age', :required => ""}
+          = f.label t('.age')
+          = f.number_field :age, class: 'form-control', placeholder: t('.age')
+
+        .field
+          = f.label 'email'
+          = f.email_field :email, class: 'form-control', placeholder: 'email'
+
+        .field
+          = f.label :avatar
+          = f.file_field :avatar
 
         .actions
           %br
