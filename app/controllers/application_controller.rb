@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  rescue_from Exception do
+    render file: "#{Rails.root}/public/404"
+  end
+
   def set_current_cart
     session[:cart_id] ||= Cart.create.id
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026093653) do
+ActiveRecord::Schema.define(version: 20161202191946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 20161026093653) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_accounts_on_user_id", using: :btree
+  end
+
+  create_table "addresses", force: :cascade do |t|
+    t.string  "city"
+    t.string  "street"
+    t.integer "addressable_id"
+    t.string  "addressable_type"
   end
 
   create_table "carts", force: :cascade do |t|
@@ -37,6 +44,29 @@ ActiveRecord::Schema.define(version: 20161026093653) do
     t.index ["product_id", "cart_id"], name: "index_carts_products_on_product_id_and_cart_id", using: :btree
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer  "total"
+    t.string   "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string   "name"
+    t.string   "type"
+    t.integer  "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_assets", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "desc"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -51,6 +81,7 @@ ActiveRecord::Schema.define(version: 20161026093653) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "email"
+    t.string   "roles_mask"
   end
 
   add_foreign_key "accounts", "users"

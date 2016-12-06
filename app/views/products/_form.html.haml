@@ -1,22 +1,28 @@
 .container-fluid
   .row
     .col-md-4
-      = form_tag '/products' do
+      = form_for @product do |product_form|
 
         %h3= t('.new_product')
 
-        = label_tag t('.name')
-        %input.form-control{:placeholder => t('.name'), :type => 'text', :name => 'name'}
+        -#= label_tag t('.name')
+        -#%input.form-control{:placeholder => t('.name'), :type => 'text', :name => 'name'}
+        = product_form.label :name
+        = product_form.text_field :name, class: 'form-control'
 
         %br
         = label_tag t('.price')
         %input.form-control{placeholder: t('.price'), type: 'integer', name: 'price'}
 
         %br
-        = label_tag t('.description')
-        %input.form-control{:placeholder => t('.description'), :type => 'text', :name => 'description'}
-
+        -#= label_tag t('.description')
+        -#%input.form-control{:placeholder => t('.description'), :type => 'text', :name => 'description'}
+        = product_form.label :description
+        = product_form.text_field :description, class: 'form-control'
         %br
+        = product_form.fields_for :product_asset_attributes, @product.product_assets.new do |asset_form|
+          = asset_form.label :desc
+          = asset_form.text_field :desc, class: 'form-control'
 
         %p= submit_tag t('.save'), class: 'btn btn-success'
 

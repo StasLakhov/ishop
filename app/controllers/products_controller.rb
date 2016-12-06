@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   def index
     @products = Product.all
     @products = Product.order(params[:sort])
@@ -9,11 +10,12 @@ class ProductsController < ApplicationController
   end
 
   def new
+    raise Exception.new
     @product = Product.new
   end
 
   def create
-    Product.create(product_params)
+    Product.create!(product_params)
     redirect_to products_path
     flash[:success] = t(:Created_successfully)
   end
@@ -28,11 +30,8 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    #params.require('product').permit(:name, :price, :description)
-    {
-      name: params[:name],
-      price: params[:price],
-      description: params[:description]
-    }
+    # params.require('product').permit(:name, :price, :description).permit(:product_asset_attributes)
+    # params.permit_all_parameters = true
+    params.permit(:product, :product_asset_attributes)
   end
 end
